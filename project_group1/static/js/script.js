@@ -1,191 +1,65 @@
-let goldVotes = 0;
-let silverVotes = 0;
-let bitcoinVotes = 0;
-
-const goldVoteButton = document.getElementById('goldVote');
-const silverVoteButton = document.getElementById('silverVote');
-const bitcoinVoteButton = document.getElementById('bitcoinVote');
-
-const goldCountSpan = document.getElementById('goldCount');
-const silverCountSpan = document.getElementById('silverCount');
-const bitcoinCountSpan = document.getElementById('bitcoinCount');
-
-goldVoteButton.addEventListener('click', () => {
-    goldVotes++;
-    goldCountSpan.textContent = goldVotes;
-});
-
-silverVoteButton.addEventListener('click', () => {
-    silverVotes++;
-    silverCountSpan.textContent = silverVotes;
-});
-
-bitcoinVoteButton.addEventListener('click', () => {
-    bitcoinVotes++;
-    bitcoinCountSpan.textContent = bitcoinVotes;
-})
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    fetch('/api/bitcoin')
+// Function to handle data fetching and graph creation
+function createGraph(apiUrl, graphId, name) {
+    fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
-            var data = JSON.parse(data);
+            const parsedData = JSON.parse(data);
+            const month_year = [];
+            const closing_price = [];
+            const volume = [];
 
-            month_year = [];
-            closing_price = [];
-            volume = [];
+            for (let i = 0; i < parsedData.length; i++) {
+                const m_y = new Date(parsedData[i].month_year).toLocaleDateString("en-US");
+                const c_p = parsedData[i].closing_price;
+                const v = parsedData[i].volume;
 
-            for (let i = 0; i < data.length; i++){
-
-                m_y = data[i]["month_year"];
-                var dates = new Date(m_y).toLocaleDateString("en-US")
-                c_p = data[i]["closing_price"];
-                v = data[i]["volume"]
-
-                month_year.push(dates);
+                month_year.push(m_y);
                 closing_price.push(c_p);
                 volume.push(v);
-        }
-            console.log(month_year);
-            console.log(closing_price);
-            console.log(volume);
+            }
 
-            var trace1 = {
+            const trace1 = {
                 type: 'line',
                 x: month_year,
                 y: closing_price,
                 mode: 'lines+markers',
-                name: 'Bitcoin Closing Price'
+                name: `${name} Closing Price`
             };
-            var trace2 = {
+
+            const trace2 = {
                 type: 'bar',
                 x: month_year,
                 y: volume,
                 mode: 'lines+markers',
-                name: 'Bitcoin Volume',
+                name: `${name} Volume`,
                 yaxis: 'y2',
                 opacity: 0.5
             };
-            var layout = {
-                title: 'Bitcoin Closing Price & Volume',
-                xaxis: {showgrid: false, zeroline: false},
-                yaxis: {title: 'Closing Price'},
-                yaxis2: {title: 'Volume', overlaying: "y", side: 'right'}
+
+            const layout = {
+                title: `${name} Closing Price & Volume`,
+                xaxis: { showgrid: false, zeroline: false },
+                yaxis: { title: 'Closing Price' },
+                yaxis2: { title: 'Volume', overlaying: "y", side: 'right' }
             };
-            var data = [trace1, trace2]
 
-            Plotly.newPlot('bitcoin-graph', data, layout);
-    });
-    }
-);
+            const data = [trace1, trace2];
 
-document.addEventListener("DOMContentLoaded", function () {
-    fetch('/api/gold')
-        .then(response => response.json())
-        .then(data => {
-            var data = JSON.parse(data);
-
-            month_year = [];
-            closing_price = [];
-            volume = [];
-
-            for (let i = 0; i < data.length; i++){
-
-                m_y = data[i]["month_year"];
-                var dates = new Date(m_y).toLocaleDateString("en-US")
-                c_p = data[i]["closing_price"];
-                v = data[i]["volume"]
-
-                month_year.push(dates);
-                closing_price.push(c_p);
-                volume.push(v);
-        }
-        console.log(month_year);
-        console.log(closing_price);
-        console.log(volume);
-
-        var trace1 = {
-            type: 'line',
-            x: month_year,
-            y: closing_price,
-            mode: 'lines+markers',
-            name: 'Gold Closing Price'
-        };
-        var trace2 = {
-            type: 'bar',
-            x: month_year,
-            y: volume,
-            mode: 'lines+markers',
-            name: 'Gold Volume',
-            yaxis: 'y2',
-            opacity: 0.5
-        };
-        var layout = {
-            title: 'Gold Closing Price & Volume',
-            xaxis: {showgrid: false, zeroline: false},
-            yaxis: {title: 'Closing Price'},
-            yaxis2: {title: 'Volume', overlaying: "y", side: 'right'}
-        };
-        var data = [trace1, trace2]
-
-        Plotly.newPlot('gold-graph', data, layout);
-    }
-        )
-    }
-);
+            Plotly.newPlot(graphId, data, layout);
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+}
 
 document.addEventListener("DOMContentLoaded", function () {
-    fetch('/api/silver')
-        .then(response => response.json())
-        .then(data => {
-            var data = JSON.parse(data);
+    createGraph('/api/bitcoin', 'bitcoin-graph', 'Bitcoin');
+});
 
-            month_year = [];
-            closing_price = [];
-            volume = [];
+document.addEventListener("DOMContentLoaded", function () {
+    createGraph('/api/gold', 'gold-graph', 'Gold');
+});
 
-            for (let i = 0; i < data.length; i++){
-
-                m_y = data[i]["month_year"];
-                var dates = new Date(m_y).toLocaleDateString("en-US");
-                c_p = data[i]["closing_price"];
-                v = data[i]["volume"]
-
-                month_year.push(dates);
-                closing_price.push(c_p);
-                volume.push(v);
-        }
-        console.log(month_year);
-        console.log(closing_price);
-        console.log(volume);
-
-        var trace1 = {
-            type: 'line',
-            x: month_year,
-            y: closing_price,
-            mode: 'lines+markers',
-            name: 'Silver Closing Price'
-        };
-        var trace2 = {
-            type: 'bar',
-            x: month_year,
-            y: volume,
-            mode: 'lines+markers',
-            name: 'Silver Volume',
-            yaxis: 'y2',
-            opacity: 0.5
-        };
-        var layout = {
-            title: 'Silver Closing Price & Volume',
-            xaxis: {showgrid: false, zeroline: false},
-            yaxis1: {title: 'Closing Price'},
-            yaxis2: {title: 'Volume', overlaying: "y", side: 'right'}
-        };
-        var data = [trace1, trace2]
-
-        Plotly.newPlot('silver-graph', data, layout);
-    }
-        )
-    }
-);
+document.addEventListener("DOMContentLoaded", function () {
+    createGraph('/api/silver', 'silver-graph', 'Silver');
+});

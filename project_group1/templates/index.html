@@ -28,10 +28,23 @@
           margin: 0;
           padding: 0;
         }
-      </style>
-      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    </style>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
+    <h1>Currency Price Dashboard</h1>
+    <form method="POST">
+        <label for="currency">Select a currency:</label>
+        <select name="currency" id="currency">
+            <option value="Bitcoin">Bitcoin</option>
+            <option value="Gold">Gold</option>
+            <option value="Silver">Silver</option>
+            <option value="bitcoin_vs_gold">Bitcoin vs Gold</option>
+            <option value="bitcoin_vs_silver">Bitcoin vs Silver</option>
+        </select>
+        <input type="submit" value="Show Graph">
+    </form>
+
     <header>
         <div class="container">
             <div class="jumbotron" style="text-align: center">
@@ -45,7 +58,6 @@
     <div id="dashboard">
         <div class="row">
             <div class="col-md-offset-4 col-md-4">
-                
                 <h3 class="counter">0</h3>
                 <button id="goldVote">Vote for Gold</button>
                 <button id="silverVote">Vote for Silver</button>
@@ -53,7 +65,6 @@
             </div>
             <div class="col-md-4">
                 <div class="row">
-                    
                     <div id="results">
                         <div class="col-md-4">
                             <p>Gold Votes: <span id="goldCount">0</span></p>
@@ -72,16 +83,15 @@
     <div id="stars"></div>
 
     <h1>Bitcoin Chart</h1>
-    <div id ="bitcoin-graph" style= "height: 500px;", "width: 1000px;"></div> 
+    <div id="bitcoin-graph" style="height: 500px; width: 1000px;"></div> 
     <br> 
     <br>
     <h2>Gold Chart</h2>
-    <div id ="gold-graph" style= "height: 500px;", "width: 1000px;"></div> 
+    <div id="gold-graph" style="height: 500px; width: 1000px;"></div> 
     <br>
     <br>
     <h3>Silver Chart</h3>
-    <div id ="silver-graph" style= "height: 500px;", "width: 1000px;"></div> 
+    <div id="silver-graph" style="height: 500px; width: 1000px;"></div> 
     <script src="static/js/script.js"></script>
-    
 </body>
 </html>
