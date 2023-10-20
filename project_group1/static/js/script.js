@@ -25,6 +25,8 @@ bitcoinVoteButton.addEventListener('click', () => {
     bitcoinCountSpan.textContent = bitcoinVotes;
 })
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
     fetch('/api/bitcoin')
         .then(response => response.json())
@@ -78,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     }
 );
+
 
 document.addEventListener("DOMContentLoaded", function () {
     fetch('/api/gold')
