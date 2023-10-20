@@ -34,12 +34,12 @@
     <h1>Currency Price Dashboard</h1>
     <form method="POST">
         <label for="currency">Select a currency:</label>
-        <select name="currency" id="currency">
+        <select id="currency" onchange="optionChanged(value)">
             <option value="Bitcoin">Bitcoin</option>
             <option value="Gold">Gold</option>
             <option value="Silver">Silver</option>
             <option value="bitcoin_vs_gold">Bitcoin vs Gold</option>
-            <option value="bitcoin_vs_silver">Bitcoin vs Silver</option>
+            <option value="bitcoin_vs_silver">Bitcoin vs Silver</option> 
         </select>
         <input type="submit" value="Show Graph">
     </form>
@@ -90,6 +90,8 @@
     <br>
     <h3>Silver Chart</h3>
     <div id="silver-graph" style="height: 500px; width: 1000px;"></div> 
+
+
     <script src="static/js/script.js"></script>
 </body>
 </html>

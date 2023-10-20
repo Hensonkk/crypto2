@@ -25,9 +25,7 @@ bitcoinVoteButton.addEventListener('click', () => {
     bitcoinCountSpan.textContent = bitcoinVotes;
 })
 
-
-
-document.addEventListener("DOMContentLoaded", function () {
+let bitcoin = document.addEventListener("DOMContentLoaded", function () {
     fetch('/api/bitcoin')
         .then(response => response.json())
         .then(data => {
@@ -79,10 +77,10 @@ document.addEventListener("DOMContentLoaded", function () {
             Plotly.newPlot('bitcoin-graph', data, layout);
     });
     }
-);
+)
 
 
-document.addEventListener("DOMContentLoaded", function () {
+let gold = document.addEventListener("DOMContentLoaded", function () {
     fetch('/api/gold')
         .then(response => response.json())
         .then(data => {
@@ -135,9 +133,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
         )
     }
-);
+)
 
-document.addEventListener("DOMContentLoaded", function () {
+let silver = document.addEventListener("DOMContentLoaded", function () {
     fetch('/api/silver')
         .then(response => response.json())
         .then(data => {
