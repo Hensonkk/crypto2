@@ -23,10 +23,10 @@ let jsonData = {
 
 var dataPoints =[];
 var chart = new CanvasJS.Chart("chartContainer", {
-        title: {text: "Bitcoin vs Gold"},
+        title: {text: "Bitcoin vs Gold by Year (Max Price/Volume)"},
         axisX: {title: 'Year', valueFormatString: "####", interval:1},
-        axisY2: {title: 'Gold Price', lineColor: "#bca14f", titleFontColor: "#bca14f", labelFontColor: "#bca14f", includeZero: true},
-        axisY: {title: "Bitcoin Price", lineColor: "#4f82bc", titleFontColor: "#4f82bc", labelFontColor: "#4f82bc"}, 
+        axisY2: {title: 'Gold Price', lineColor: "#bca14f", titleFontColor: "#bca14f", labelFontColor: "#bca14f", includeZero: true, prefix: "$"},
+        axisY: {title: "Bitcoin Price", lineColor: "#4f82bc", titleFontColor: "#4f82bc", labelFontColor: "#4f82bc", prefix: "$"}, 
         legend: {verticalAlign: "bottom"},
 
       data: [{
@@ -57,8 +57,6 @@ var chart = new CanvasJS.Chart("chartContainer", {
         chart.options.data[1].dataPoints.push({x: xval, y: y2val})}
     
         chart.render()
-        console.log(xval);
-        console.log(yval);
 });
 
 
@@ -87,10 +85,10 @@ let jsonData1 = {
 
 var dataPoints1 =[];
 var chart1 = new CanvasJS.Chart("chartContainer1", {
-        title: {text: "Bitcoin vs Silver"},
+        title: {text: "Bitcoin vs Silver by Year (Max Price/Volume)"},
         axisX: {title: 'Year', valueFormatString: "####", interval:1},
-        axisY2: {title: 'Silver Price', lineColor: "#d4d4d4", titleFontColor: "#d4d4d4", labelFontColor: "#d4d4d4", includeZero: true},
-        axisY: {title: "Bitcoin Price", lineColor: "#4f82bc", titleFontColor: "#4f82bc", labelFontColor: "#4f82bc"}, 
+        axisY2: {title: 'Silver Price', lineColor: "#d4d4d4", titleFontColor: "#d4d4d4", labelFontColor: "#d4d4d4", includeZero: true, prefix: "$"},
+        axisY: {title: "Bitcoin Price", lineColor: "#4f82bc", titleFontColor: "#4f82bc", labelFontColor: "#4f82bc", prefix: "$"}, 
         legend: {verticalAlign: "bottom"},
                     
     data1: [{
@@ -113,10 +111,10 @@ $( ".dropdown1" ).change(function() {
     var e1 = document.getElementById("dd1");
     var selected1 = e1.options[e1.selectedIndex].value;
     currency1 = jsonData1[selected1];
-        for (i in currency1){
-            xval1 = currency1[i].x
-            yval1 = currency1[i].y
-            y2val1 = currency1[i].y2
+        for (x in currency1){
+            xval1 = currency1[x].x
+            yval1 = currency1[x].y
+            y2val1 = currency1[x].y2
         chart1.options.data1[0].dataPoints1.push({x: xval1, y: yval1})
         chart1.options.data1[1].dataPoints1.push({x: xval1, y: y2val1})}
                         

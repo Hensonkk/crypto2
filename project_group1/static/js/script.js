@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
             var layout = {
                 title: 'Bitcoin Closing Price & Volume',
                 xaxis: {showgrid: false, zeroline: false},
-                yaxis: {title: 'Closing Price'},
-                yaxis2: {title: 'Volume', overlaying: "y", side: 'right'},
+                yaxis: {title: 'Closing Price ($)'},
+                yaxis2: {title: 'Volume ($)', overlaying: "y", side: 'right'},
                 legend: {x:1, y:-.5}
             };
             var data = [trace1, trace2]
@@ -118,8 +118,8 @@ document.addEventListener("DOMContentLoaded", function () {
         var layout = {
             title: 'Gold Closing Price & Volume',
             xaxis: {showgrid: false, zeroline: false},
-            yaxis: {title: 'Closing Price'},
-            yaxis2: {title: 'Volume', overlaying: "y", side: 'right'},
+            yaxis: {title: 'Closing Price ($)'},
+            yaxis2: {title: 'Volume ($)', overlaying: "y", side: 'right'},
             legend: {x:1, y:-.5}
         };
         var data = [trace1, trace2]
@@ -172,8 +172,8 @@ document.addEventListener("DOMContentLoaded", function () {
         var layout = {
             title: 'Silver Closing Price & Volume',
             xaxis: {showgrid: false, zeroline: false},
-            yaxis1: {title: 'Closing Price'},
-            yaxis2: {title: 'Volume', overlaying: "y", side: 'right'},
+            yaxis1: {title: 'Closing Price ($)'},
+            yaxis2: {title: 'Volume ($)', overlaying: "y", side: 'right'},
             legend: {x:1, y:-.5}
         };
         var data = [trace1, trace2]
