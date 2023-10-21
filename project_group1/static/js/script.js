@@ -23,9 +23,9 @@ silverVoteButton.addEventListener('click', () => {
 bitcoinVoteButton.addEventListener('click', () => {
     bitcoinVotes++;
     bitcoinCountSpan.textContent = bitcoinVotes;
-})
+});
 
-let bitcoin = document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     fetch('/api/bitcoin')
         .then(response => response.json())
         .then(data => {
@@ -39,16 +39,13 @@ let bitcoin = document.addEventListener("DOMContentLoaded", function () {
 
                 m_y = data[i]["month_year"];
                 var dates = new Date(m_y).toLocaleDateString("en-US")
-                c_p = data[i]["closing_price"];
-                v = data[i]["volume"]
+                c_p = data[i]["bitcoin_cp"];
+                v = data[i]["bitcoin_v"];
 
                 month_year.push(dates);
                 closing_price.push(c_p);
                 volume.push(v);
-        }
-            console.log(month_year);
-            console.log(closing_price);
-            console.log(volume);
+            }
 
             var trace1 = {
                 type: 'line',
@@ -70,17 +67,17 @@ let bitcoin = document.addEventListener("DOMContentLoaded", function () {
                 title: 'Bitcoin Closing Price & Volume',
                 xaxis: {showgrid: false, zeroline: false},
                 yaxis: {title: 'Closing Price'},
-                yaxis2: {title: 'Volume', overlaying: "y", side: 'right'}
+                yaxis2: {title: 'Volume', overlaying: "y", side: 'right'},
+                legend: {x:1, y:-.5}
             };
             var data = [trace1, trace2]
 
             Plotly.newPlot('bitcoin-graph', data, layout);
     });
     }
-)
+);
 
-
-let gold = document.addEventListener("DOMContentLoaded", function () {
+ document.addEventListener("DOMContentLoaded", function () {
     fetch('/api/gold')
         .then(response => response.json())
         .then(data => {
@@ -94,16 +91,13 @@ let gold = document.addEventListener("DOMContentLoaded", function () {
 
                 m_y = data[i]["month_year"];
                 var dates = new Date(m_y).toLocaleDateString("en-US")
-                c_p = data[i]["closing_price"];
-                v = data[i]["volume"]
+                c_p = data[i]["gold_cp"];
+                v = data[i]["gold_v"]
 
                 month_year.push(dates);
                 closing_price.push(c_p);
                 volume.push(v);
         }
-        console.log(month_year);
-        console.log(closing_price);
-        console.log(volume);
 
         var trace1 = {
             type: 'line',
@@ -125,7 +119,8 @@ let gold = document.addEventListener("DOMContentLoaded", function () {
             title: 'Gold Closing Price & Volume',
             xaxis: {showgrid: false, zeroline: false},
             yaxis: {title: 'Closing Price'},
-            yaxis2: {title: 'Volume', overlaying: "y", side: 'right'}
+            yaxis2: {title: 'Volume', overlaying: "y", side: 'right'},
+            legend: {x:1, y:-.5}
         };
         var data = [trace1, trace2]
 
@@ -135,7 +130,8 @@ let gold = document.addEventListener("DOMContentLoaded", function () {
     }
 )
 
-let silver = document.addEventListener("DOMContentLoaded", function () {
+
+document.addEventListener("DOMContentLoaded", function () {
     fetch('/api/silver')
         .then(response => response.json())
         .then(data => {
@@ -149,16 +145,13 @@ let silver = document.addEventListener("DOMContentLoaded", function () {
 
                 m_y = data[i]["month_year"];
                 var dates = new Date(m_y).toLocaleDateString("en-US");
-                c_p = data[i]["closing_price"];
-                v = data[i]["volume"]
+                c_p = data[i]["silver_cp"];
+                v = data[i]["silver_v"]
 
                 month_year.push(dates);
                 closing_price.push(c_p);
                 volume.push(v);
         }
-        console.log(month_year);
-        console.log(closing_price);
-        console.log(volume);
 
         var trace1 = {
             type: 'line',
@@ -180,7 +173,8 @@ let silver = document.addEventListener("DOMContentLoaded", function () {
             title: 'Silver Closing Price & Volume',
             xaxis: {showgrid: false, zeroline: false},
             yaxis1: {title: 'Closing Price'},
-            yaxis2: {title: 'Volume', overlaying: "y", side: 'right'}
+            yaxis2: {title: 'Volume', overlaying: "y", side: 'right'},
+            legend: {x:1, y:-.5}
         };
         var data = [trace1, trace2]
 
@@ -188,4 +182,4 @@ let silver = document.addEventListener("DOMContentLoaded", function () {
     }
         )
     }
-);
+)
