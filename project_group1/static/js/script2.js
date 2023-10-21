@@ -89,7 +89,7 @@ var dataPoints1 =[];
 var chart1 = new CanvasJS.Chart("chartContainer1", {
         title: {text: "Bitcoin vs Silver"},
         axisX: {title: 'Year', valueFormatString: "####", interval:1},
-        axisY2: {title: 'Silver Price', lineColor: "#bca14f", titleFontColor: "#bca14f", labelFontColor: "#bca14f", includeZero: true},
+        axisY2: {title: 'Silver Price', lineColor: "#d4d4d4", titleFontColor: "#d4d4d4", labelFontColor: "#d4d4d4", includeZero: true},
         axisY: {title: "Bitcoin Price", lineColor: "#4f82bc", titleFontColor: "#4f82bc", labelFontColor: "#4f82bc"}, 
         legend: {verticalAlign: "bottom"},
                     
@@ -103,8 +103,8 @@ var chart1 = new CanvasJS.Chart("chartContainer1", {
         {showInLegend: true,
         type: 'line',
         axisYType: "secondary",
-        color: "#bca14f",
-        name: "Gold",
+        color: "#d4d4d4",
+        name: "Silver",
         dataPoints: dataPoints1}]});
                       
 $( ".dropdown1" ).change(function() {
