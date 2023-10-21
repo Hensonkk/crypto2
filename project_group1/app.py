@@ -36,14 +36,6 @@ def get_silver():
     conn.close()
     return jsonify(data.to_json(orient="records"))
 
-@app.route("/api/currencies")
-def get_currencies():
-    conn = psycopg2.connect(database="Currency_db", user="postgres", password="postgres", port="5432")
-    query = "select gold.gold_cp, gold.gold_v, bitcoin.bitcoin_cp , bitcoin.bitcoin_v , silver.silver_cp , silver.silver_v ,bitcoin.month_year from bitcoin inner join gold on gold.month_year = bitcoin.month_year inner join silver on bitcoin.month_year = silver.month_year;"
-    data = pd.read_sql(query, conn)
-    conn.close()
-    return jsonify(data.to_json(orient="records"))
-
 @app.route("/heatmap")
 def generate_heatmap():
     data = pd.read_csv("path_to_heatmap_data.csv")
