@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 type: 'line',
                 x: month_year,
                 y: closing_price,
+                marker: {color: 'rgb(44,135,209'},
                 mode: 'lines+markers',
                 name: 'Bitcoin Closing Price'
             };
@@ -61,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 mode: 'lines+markers',
                 name: 'Bitcoin Volume',
                 yaxis: 'y2',
-                opacity: 0.5
+                opacity: 0.4
             };
             var layout = {
                 title: 'Bitcoin Closing Price & Volume',
@@ -102,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var trace1 = {
             type: 'line',
             x: month_year,
+            marker: {color: 'rgb(255,215,0'},
             y: closing_price,
             mode: 'lines+markers',
             name: 'Gold Closing Price'
@@ -113,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
             mode: 'lines+markers',
             name: 'Gold Volume',
             yaxis: 'y2',
-            opacity: 0.5
+            opacity: 0.4
         };
         var layout = {
             title: 'Gold Closing Price & Volume',
@@ -156,6 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var trace1 = {
             type: 'line',
             x: month_year,
+            marker: {color: 'rgb(192,192,192'},
             y: closing_price,
             mode: 'lines+markers',
             name: 'Silver Closing Price'
@@ -167,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
             mode: 'lines+markers',
             name: 'Silver Volume',
             yaxis: 'y2',
-            opacity: 0.5
+            opacity: 0.4
         };
         var layout = {
             title: 'Silver Closing Price & Volume',

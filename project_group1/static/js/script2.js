@@ -25,21 +25,21 @@ var dataPoints =[];
 var chart = new CanvasJS.Chart("chartContainer", {
         title: {text: "Bitcoin vs Gold by Year (Max Price/Volume)"},
         axisX: {title: 'Year', valueFormatString: "####", interval:1},
-        axisY2: {title: 'Gold Price', lineColor: "#bca14f", titleFontColor: "#bca14f", labelFontColor: "#bca14f", includeZero: true, prefix: "$"},
-        axisY: {title: "Bitcoin Price", lineColor: "#4f82bc", titleFontColor: "#4f82bc", labelFontColor: "#4f82bc", prefix: "$"}, 
+        axisY2: {title: 'Gold Price', lineColor: "#FFD700", titleFontColor: "#FFD700", labelFontColor: "#FFD700", includeZero: true, prefix: "$"},
+        axisY: {title: "Bitcoin Price", lineColor: "#2c87d1", titleFontColor: "#2c87d1", labelFontColor: "#2c87d1", prefix: "$"}, 
         legend: {verticalAlign: "bottom"},
 
       data: [{
       showInLegend: true,
       type: 'line',
       axisYType: "primary",
-      color: "#4f82bc",
+      color: "#2c87d1",
       name: "Bitcoin",
       dataPoints: dataPoints},
         {showInLegend: true,
         type: 'line',
         axisYType: "secondary",
-        color: "#bca14f",
+        color: "#FFD700",
         name: "Gold",
         dataPoints: dataPoints}]});
   
