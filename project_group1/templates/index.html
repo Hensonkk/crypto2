@@ -33,17 +33,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <h1>Currency Price Dashboard</h1>
-    <form method="POST">
-        <select id="currency" onchange="optionChanged(value)">
-            <option value="Bitcoin">Bitcoin</option>
-            <option value="Gold">Gold</option>
-            <option value="Silver">Silver</option>
-            <option value="bitcoin_vs_gold">Bitcoin vs Gold</option>
-            <option value="bitcoin_vs_silver">Bitcoin vs Silver</option> 
-        </select>
-    </form>
-
     <header>
         <div class="container">
             <div class="jumbotron" style="text-align: center">
@@ -81,7 +70,21 @@
     </div>
 </div>
 <br>
-<div>
+<br>
+<h1>Bitcoin Chart</h1>
+<div id="bitcoin-graph" style="height: 500px; width: 75%;"></div> 
+<br> 
+<br>
+<br>
+<h2>Gold Chart</h2>
+<div id="gold-graph" style="height: 500px; width: 75%;"></div> 
+<br>
+<br>
+<br>
+<h3>Silver Chart</h3>
+<div id="silver-graph" style="height: 500px; width: 75%;"></div>
+<br>
+<br>
 <select class="dropdown" id="dd">
     <option value="" selected="selected">Choose Currency</option>
     <option value="currency1">Bitcoin vs Gold Price</option>
@@ -98,24 +101,14 @@
     </select>
     <div id="chartContainer1" style="height: 300px; width: 75%;"></div>
 </div>
-    <br>
-    <br>
-    <br>
-    <h1>Bitcoin Chart</h1>
-    <div id="bitcoin-graph" style="height: 500px; width: 75%;"></div> 
-    <br> 
-    <br>
-    <br>
-    <h2>Gold Chart</h2>
-    <div id="gold-graph" style="height: 500px; width: 75%;"></div> 
-    <br>
-    <br>
-    <br>
-    <h3>Silver Chart</h3>
-    <div id="silver-graph" style="height: 500px; width: 75%;"></div>
-    <br>
-    <br>
+<br>
+<br>
+<a href="{{ url_for('heatmap') }}" class="currency-button">View Heatmap of Gold Reserves by Country</a>
+<br>
+<br>
     <script src="static/js/script.js"></script>
     <script src="static/js/script2.js"></script>
+    <script src="{{ url_for('static', filename='heatmap.js') }}"></script>
+
 </body>
 </html>

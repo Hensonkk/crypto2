@@ -5,12 +5,19 @@ import base64
 import io
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+import json
 
 app = Flask(__name__)
+app.static_url_path = '/static'
+app.static_folder = 'static'
 
 @app.route("/")
 def index():
     return render_template("index.html") # templates/index.html
+
+@app.route('/heatmap')
+def heatmap():
+    return render_template('heatmap.html')
 
 @app.route("/api/bitcoin")
 def get_bitcoin():
@@ -36,17 +43,27 @@ def get_silver():
     conn.close()
     return jsonify(data.to_json(orient="records"))
 
-@app.route("/heatmap")
-def generate_heatmap():
-    data = pd.read_csv("path_to_heatmap_data.csv")
+@app.route('/get_data')
+def get_data():
+    # Load and serve the JSON data
+    with open('gold_reserves.json') as json_file:
+        data = json.load(json_file)
+    return jsonify(data)
 
-    fig = Figure()
-    axis = fig.add_subplot(1, 1, 1)
-    output = io.BytesIO()
-    FigureCanvas(fig).print_png(output)
-    heatmap_base64 = base64.b64encode(output.getvalue()).decode('utf-8')
-
-    return render_template("index.html", heatmap_base64=heatmap_base64)
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
+
+# @app.route("/heatmap")
+# def generate_heatmap():
+#     data = pd.read_csv("path_to_heatmap_data.csv")
+
+#     fig = Figure()
+#     axis = fig.add_subplot(1, 1, 1)
+#     output = io.BytesIO()
+#     FigureCanvas(fig).print_png(output)
+#     heatmap_base64 = base64.b64encode(output.getvalue()).decode('utf-8')
+
+#     return render_template("index.html", heatmap_base64=heatmap_base64)
+
+# if __name__ == "__main__":
+#     app.run(debug=True)

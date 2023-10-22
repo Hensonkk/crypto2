@@ -83,7 +83,7 @@ let jsonData1 = {
                     {x: 2022, y: 1224531549126, y2: 123756},
                     {x: 2023, y: 883299703608, y2: 74574}]};
 
-var dataPoints1 =[];
+var dataPoints0 =[];
 var chart1 = new CanvasJS.Chart("chartContainer1", {
         title: {text: "Bitcoin vs Silver by Year (Max Price/Volume)"},
         axisX: {title: 'Year', valueFormatString: "####", interval:1},
@@ -91,23 +91,23 @@ var chart1 = new CanvasJS.Chart("chartContainer1", {
         axisY: {title: "Bitcoin Price", lineColor: "#4f82bc", titleFontColor: "#4f82bc", labelFontColor: "#4f82bc", prefix: "$"}, 
         legend: {verticalAlign: "bottom"},
                     
-    data1: [{
+    data: [{
         showInLegend: true,
         type: 'line',
         axisYType: "primary",
         color: "#4f82bc",
         name: "Bitcoin",
-        dataPoints: dataPoints1},
+        dataPoints1: dataPoints0},
         {showInLegend: true,
         type: 'line',
         axisYType: "secondary",
         color: "#d4d4d4",
         name: "Silver",
-        dataPoints: dataPoints1}]});
+        dataPoints1: dataPoints0}]});
                       
 $( ".dropdown1" ).change(function() {
-    chart1.options.data1[0].dataPoints1 = [];
-    chart1.options.data1[1].dataPoints1 = [];
+    chart1.options.data[0].dataPoints1 = [];
+    chart1.options.data[1].dataPoints1 = [];
     var e1 = document.getElementById("dd1");
     var selected1 = e1.options[e1.selectedIndex].value;
     currency1 = jsonData1[selected1];
@@ -115,8 +115,8 @@ $( ".dropdown1" ).change(function() {
             xval1 = currency1[x].x
             yval1 = currency1[x].y
             y2val1 = currency1[x].y2
-        chart1.options.data1[0].dataPoints1.push({x: xval1, y: yval1})
-        chart1.options.data1[1].dataPoints1.push({x: xval1, y: y2val1})}
+        chart1.options.data[0].dataPoints1.push({x: xval1, y: yval1})
+        chart1.options.data[1].dataPoints1.push({x: xval1, y: y2val1})}
                         
         chart.render()
         console.log(xval1);
