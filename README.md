@@ -1,6 +1,7 @@
 Project 3 
 
 Is Crypto the Future?
+
 Group Members:
 Shloka Jain
 TJ Davis
@@ -13,7 +14,7 @@ Project Overview
 
 Research Questions
 
-T-o guide our exploration, we have framed several research questions:
+To guide our exploration, we have framed several research questions:
 
 Which is more stable, Gold, Bitcoin, or Silver? 
 
@@ -21,7 +22,9 @@ Which is more stable, Gold, Bitcoin, or Silver?
 
 Was there a shift in market sentiment when Bitcoin was created? Did it divert attention from Gold and Silver, with expectations of a digital currency future? - We will investigate market sentiment changes and shifts in investments before and after the emergence of Bitcoin.
 
-Which countries hold the most reserves of Gold? - We will use a heatmap to visualize the distribution of Gold reserves around the world.
+Which countries hold the most reserves of Gold? 
+
+- We will use a heatmap to visualize the distribution of Gold reserves around the world.
 
 Data Presentation
 
