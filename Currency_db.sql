@@ -61,3 +61,11 @@ bitcoin.month_year
 from bitcoin
 inner join gold on gold.month_year = bitcoin.month_year 
 inner join silver on bitcoin.month_year = silver.month_year;
+
+
+
+
+
+
+
+
