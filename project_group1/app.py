@@ -52,18 +52,3 @@ def get_data():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-# @app.route("/heatmap")
-# def generate_heatmap():
-#     data = pd.read_csv("path_to_heatmap_data.csv")
-
-#     fig = Figure()
-#     axis = fig.add_subplot(1, 1, 1)
-#     output = io.BytesIO()
-#     FigureCanvas(fig).print_png(output)
-#     heatmap_base64 = base64.b64encode(output.getvalue()).decode('utf-8')
-
-#     return render_template("index.html", heatmap_base64=heatmap_base64)
-
-# if __name__ == "__main__":
-#     app.run(debug=True)

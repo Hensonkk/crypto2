@@ -41,12 +41,11 @@
                     <h2>Vote for Your Preferred Investment!</h2>
                 </div>
             </div>
-        </div>
-    </header>
+</header>
+<br>
     <div id="dashboard">
         <div class="row">
             <div class="col-md-offset-4 col-md-4">
-                <h3 class="counter">0</h3>
                 <button id="goldVote">Vote for Gold</button>
                 <button id="silverVote">Vote for Silver</button>
                 <button id="bitcoinVote">Vote for Bitcoin</button>
@@ -71,9 +70,14 @@
 </div>
 <br>
 <br>
+<a href="{{ url_for('heatmap') }}" class="currency-button">View Heatmap of Gold Reserves by Country</a>
+<br>
+<br>
 <h1>Bitcoin Chart</h1>
 <div id="bitcoin-graph" style="height: 500px; width: 75%;"></div> 
 <br> 
+<br>
+<br>
 <br>
 <br>
 <h2>Gold Chart</h2>
@@ -81,31 +85,26 @@
 <br>
 <br>
 <br>
+<br>
+<br>
 <h3>Silver Chart</h3>
 <div id="silver-graph" style="height: 500px; width: 75%;"></div>
 <br>
 <br>
+<br>
+<br>
+<br>
+<h4>Bitcoin vs Gold</h4>
+<div>
 <select class="dropdown" id="dd">
     <option value="" selected="selected">Choose Comparison</option>
     <option value="currency1">Bitcoin vs Gold Price</option>
     <option value="currency2">Bitcoin vs Gold Volume</option>
 </select>
-<div id="chartContainer" style="height: 400px; width: 75%;"></div>
+<div id="chartContainer" style="height: 500px; width: 75%;"></div>
 </div>
 <br>
-<div>
-    <select class="dropdown1" id="dd1">
-        <option value="" selected="selected1">Choose Comparison</option>
-        <option value="currency3">Bitcoin vs Silver Price</option>
-        <option value="currency4">Bitcoin vs Silver Volume</option>
-    </select>
-    <div id="chartContainer1" style="height: 300px; width: 75%;"></div>
 </div>
-<br>
-<br>
-<a href="{{ url_for('heatmap') }}" class="currency-button">View Heatmap of Gold Reserves by Country</a>
-<br>
-<br>
     <script src="static/js/script.js"></script>
     <script src="static/js/script2.js"></script>
     <script src="{{ url_for('static', filename='heatmap.js') }}"></script>

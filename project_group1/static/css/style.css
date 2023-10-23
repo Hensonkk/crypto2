@@ -10,6 +10,32 @@ body {
     position: relative;
 }
 
+h1 {
+    margin: 20px;
+    font-size: 36px;}
+
+h2 {
+    margin: 20px;
+    font-size: 36px;}
+
+h3 {
+    margin: 20px;
+    font-size: 36px;}
+
+h4 {
+    margin: 20px;
+    font-size: 36px;}
+
+.currency-button {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        margin: 5px;
+        cursor: pointer;
+    }
+
 @keyframes backgroundAnimation {
     0% {
         background-position: 0% 50%;
