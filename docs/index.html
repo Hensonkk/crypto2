@@ -105,11 +105,12 @@
 <br>
 <br>
 <a href="{{ url_for('heatmap') }}" class="currency-button">Next Page</a>
+<ol id="#next-page"><</ol>
 </div>
     <script src="static/js/script.js"></script>
     <script src="static/js/script2.js"></script>
     <script src="{{ url_for('static', filename='heatmap.js') }}"></script>
-    <script>$.load("/templates/heatmap.html");</script>
+    <script>$("#next-page").load("/templates/heatmap.html");</script>
 
 </body>
 </html>
