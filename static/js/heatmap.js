@@ -51,8 +51,8 @@ var dataPoints =[];
 var chart = new CanvasJS.Chart("chartContainer", {
    title: {text: "Bitcoin vs Silver by Year (Max Price/Volume)"},
    axisX: {title: 'Year', valueFormatString: "####", interval:1},
-   axisY2: {title: 'Silver Price', lineColor: "#d4d4d4", titleFontColor: "#d4d4d4", labelFontColor: "#d4d4d4", includeZero: true, prefix: "$"},
-   axisY: {title: "Bitcoin Price", lineColor: "#4f82bc", titleFontColor: "#4f82bc", labelFontColor: "#4f82bc", prefix: "$"}, 
+   axisY2: {title: 'Silver ', lineColor: "#d4d4d4", titleFontColor: "#d4d4d4", labelFontColor: "#d4d4d4", includeZero: true, prefix: "$"},
+   axisY: {title: "Bitcoin ", lineColor: "#4f82bc", titleFontColor: "#4f82bc", labelFontColor: "#4f82bc", prefix: "$"}, 
    legend: {verticalAlign: "bottom"},
                
 data: [{
