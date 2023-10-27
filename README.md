@@ -3,16 +3,16 @@ Project 3
 Is Crypto the Future?
 
 Group Members:
-Shloka Jain
-TJ Davis
-Wipawadee Naiyakhun
+Shloka Jain,
+TJ Davis,
+Wipawadee Naiyakhun,
 KeyShawn Henson
 
 Project Overview
 
 -Our project aims to explore the potential of Bitcoin as a sustainable and practical form of currency in our ever-evolving world. To do this, we will delve into the historical performance and characteristics of Gold, Silver, and Bitcoin. By comparing these three forms of currency, we intend to gain insights into whether Bitcoin, a cryptocurrency, has the potential to become a stable and useful medium of exchange.
 
-Research Questions
+Our Research Questions
 
 To guide our exploration, we have framed several research questions:
 
@@ -30,17 +30,27 @@ Data Presentation
 
 To start, we will present a basic layout for our project website, providing a quick overview of what visitors will find on our page. We invite them to participate in voting for their preferred asset if they were to invest. We kindly ask visitors to vote only once.
 
-Which Asset is More Stable?
+1. Which Asset is More Stable?
 
 Bitcoin does not have a very long history, and judging from the charts that go back almost 10 years, it's clear that while Bitcoin has a higher monetary value than Gold, it is far more volatile over this 10-year period. Gold and Silver both have what appear to be very predictable volume patterns and slow but steady upticks in value. Whereas Bitcoin has experienced large price swings, especially between September 2020 and June 2022. During that same timeframe, both Gold and Silver remained relatively flat. From a stability standpoint, Gold and Silver are far more stable and less volatile.
 
-When Bitcoin's Initial Uptick Began, Did It Take Away from Gold and Silver?
+2. When Bitcoin's Initial Uptick Began, Did It Take Away from Gold and Silver?
 
 -If you look at Bitcoin from June 2019 to September 2020, you can see an uptick in trading volume, even though the price was generally flat during that time. However, beginning in September 2020, you see a massive spike in trading price and volume, resulting in a nearly 500% gain in a 6-month timeframe. During that same period, the trading volume in both Silver and Gold did decline somewhat from normal levels, but the price still remained within a non-volatile trading range. It appears that Bitcoin's rise in trading volume may have affected the overall trading volume of Gold and Silver, but not necessarily the value of either asset.
 
-Which Countries Hold the Most Reserves of Gold?
+3. Which Countries Hold the Most Reserves of Gold?
 
 -Looking at the heatmap, it's evident that the U.S. holds the most Gold reserves, followed by Russia and China. By hovering over the map, you can see that the U.S. holds approximately three times as much Gold as its closest competitor.
+
+
+4.	Which is more volatile/which one is a riskier investment?
+
+Bitcoin has proven to be the most volatile and riskiest investment among the three. Its price has exhibited significant fluctuations over a relatively short period. Between September 2020 and June 2022, Bitcoin experienced substantial price swings, unlike Gold and Silver, which maintained relatively stable values during the same timeframe.
+
+Gold and Silver, in contrast, have shown more stable and predictable price patterns. They have historically been viewed as safe-haven assets, with values that tend to increase steadily over time. These precious metals are often considered a reliable hedge against economic uncertainty and inflation.
+
+In summary, if you prioritize stability and lower risk in your investment choices, Gold and Silver appear to be safer options. Bitcoin, on the other hand, carries a higher level of volatility and risk, which can lead to both significant gains and losses in a shorter time frame. The choice ultimately depends on your risk tolerance, investment goals, and the role you want your chosen asset to play in your portfolio.
+
 
 Data Analysis
 
