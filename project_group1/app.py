@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html") # templates/index.html
+    return render_template("Project3dashboard.html") 
 
 @app.route("/api/bitcoin")
 def get_bitcoin():
@@ -46,7 +46,7 @@ def generate_heatmap():
     FigureCanvas(fig).print_png(output)
     heatmap_base64 = base64.b64encode(output.getvalue()).decode('utf-8')
 
-    return render_template("index.html", heatmap_base64=heatmap_base64)
+    return render_template("Project3dashboard.html", heatmap_base64=heatmap_base64)
 
 if __name__ == "__main__":
     app.run(debug=True)

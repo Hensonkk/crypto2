@@ -30,6 +30,14 @@
             margin: 0;
             padding: 0;
         }
+        
+    </style>
+    <style>
+        @keyframes animStar {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
 <body>
@@ -46,7 +54,7 @@
     <div id="dashboard">
         <div class="row">
             <div class="col-md-offset-4 col-md-4">
-                <h3 class="counter">0</h3>
+                <h3 class="counter"></h3>
                 <button id="goldVote">Vote for Gold</button>
                 <button id="silverVote">Vote for Silver</button>
                 <button id="bitcoinVote">Vote for Bitcoin</button>
@@ -82,18 +90,21 @@
     <br>
     <br>
     <h1>Bitcoin vs Gold</h1>
-    <select class="dropdown" id="dd">
+    <select class="dropdown" id="dd1">
         <option value="" selected="selected">Choose Comparison</option>
         <option value="currency3">Bitcoin vs Gold Price</option>
         <option value="currency4">Bitcoin vs Gold Volume</option>
     </select>
+    <div id="chartContainer1" style="height: 500px; width: 100%;"></div>
+    
+    
     <h1>Bitcoin vs Silver</h1>
-    <select class="dropdown" id="dd">
+    <select class="dropdown" id="dd2">
         <option value="" selected="selected">Choose Comparison</option>
         <option value="currency3">Bitcoin vs Silver Price</option>
         <option value="currency4">Bitcoin vs Silver Volume</option>
     </select>
-    <div id="chartContainer" style="height: 500px; width: 100%;"></div>
+    <div id="chartContainer2" style="height: 500px; width: 100%;"></div>
     <br>
     <br>
     <h1>Gold Reserves Heatmap</h1>
@@ -102,5 +113,10 @@
     <br>
     <a href="{{ url_for('index') }}">Back to Main Page</a>
     <script src="static/js/heatmap.js"></script>
+    <script src="static/js/script.js"></script>
 </body>
 </html>
+
+
+
+

@@ -1,0 +1,67 @@
+html {
+    height: 100%;
+    overflow: auto;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    animation: backgroundAnimation 10s linear infinite;
+    position: relative;
+}
+
+h1 {
+    margin: 20px;
+    font-size: 36px;}
+
+h2 {
+    margin: 20px;
+    font-size: 36px;}
+
+h3 {
+    margin: 20px;
+    font-size: 36px;}
+
+h4 {
+    margin: 20px;
+    font-size: 36px;}
+
+.currency-button {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        margin: 5px;
+        cursor: pointer;
+    }
+
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Rest of your CSS styles */
