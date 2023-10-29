@@ -1,0 +1,14 @@
+Create the postgreSQL database. 
+1. Go to postgreSQL and create a database. Name the database "Currency_db".
+
+2. Once the database is created. Go to the public schema. Inside this schema. You will import the the file "Currency_db.sql" to your postgres
+and run all the code to create the "Bitcoin, Gold & Silver" tables.
+
+3. Once the tables are created. Go to your tables inside the public schema and import the data for each table (Bitcoin, Gold & Silver). The csv files can be 
+found in the "Data" folder and find the 'currency_csvs" folder. These are the csv files that you will need to use to import the data into your SQL tables. 
+
+4. Once the data is imported into the table. You will need to go to the app.py file and make sure your postgres username and password is set correctly for each
+"@app.route" that refers to the Bitcoin, Gold & Silver tables using the postgres database. 
+
+5. Finally, once all that is complete. Open your terminal and run 'pyhton app.py'. Should run on http://127.0.0.1:5000.
+Now you have access to our dashboard. 

@@ -50,17 +50,6 @@ select * from gold;
 select * from bitcoin;
 select * from silver;
 
--- Combine the tables together
-select gold.gold_cp , 
-gold.gold_v , 
-bitcoin.bitcoin_cp , 
-bitcoin.bitcoin_v , 
-silver.silver_cp , 
-silver.silver_v ,
-bitcoin.month_year 
-from bitcoin
-inner join gold on gold.month_year = bitcoin.month_year 
-inner join silver on bitcoin.month_year = silver.month_year;
 
 
 
